@@ -1,0 +1,44 @@
+<div class="container">
+
+  <mz-collection>
+    <mz-collection-header>
+      <h4 class="center-align">Lista de Curriculos</h4>
+      <h5 class="right-align">
+        <button mz-button (click)="bottomSheetModal.openModal()" class="green darken-2">
+          <i class="fa fa-plus-circle"></i>
+        </button>
+      </h5>
+    </mz-collection-header>
+    <mz-collection-item *ngFor="let curriculum of listCurriculum">
+      <mz-card class="blue-grey darken-1 white-text" [horizontal]="true" [hoverable]="true">
+        <mz-card-title>
+          {{curriculum.fullName}}
+        </mz-card-title>
+        <mz-card-content>
+          Experiência profissional: {{curriculum.professionalExp}}
+        </mz-card-content>
+        <mz-card-action class="right-align">
+
+          <button mz-button class="red" (click)="removeRegistry(curriculum)">
+            <i class="fa fa-trash"></i>
+          </button>
+          <button mz-button class="blue" (click)="editarRegistry(curriculum)">
+            <i class="fa fa-edit"></i>
+          </button>
+
+        </mz-card-action>
+      </mz-card>
+    </mz-collection-item>
+  </mz-collection>
+</div>
+
+<mz-modal #bottomSheetModal [fullscreen]="true" [fixedFooter]="true" [options]="modalOptions">
+  <mz-modal-header>
+    <h4 class="center-align">Novo Curriculo</h4>
+  </mz-modal-header>
+  <mz-modal-content>
+    <app-form-cadastro></app-form-cadastro>
+  </mz-modal-content>
+  <mz-modal-footer>
+  </mz-modal-footer>
+</mz-modal>

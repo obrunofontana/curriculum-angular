@@ -1,0 +1,59 @@
+<div class="container" style="background-color: red;">
+    <div class="card" style="background-color: #282828; color: wheat;">
+        <div class="card-content">
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <mz-input-container>
+                    <input mz-input [label]="'Nome Completo'" id="name" name="fullName"
+                        placeholder="Digite seu nome completo" length="150" type="text"
+                        [(ngModel)]="curriculum.fullName">
+                </mz-input-container>
+                <mz-input-container>
+                    <input mz-input [label]="'Email'" [validate]="true" [dataError]="'Email é inválido'"
+                        [dataSuccess]="'Email válido'" id="email" name="email" placeholder="Digite seu email"
+                        length="150" type="email" [(ngModel)]="curriculum.email">
+                </mz-input-container>
+                <label for="">Genero</label>
+                <div class="row">
+                    <div class="col s6">
+                        <mz-radio-button-container class="col s6 m4">
+                            <input mz-radio-button [label]="'Masculino'" [withGap]="true" id="radio-button-id2"
+                                name="genero" type="radio" value="Masculino" [(ngModel)]="curriculum.genero">
+                        </mz-radio-button-container>
+
+                        <mz-radio-button-container class="col s6 m4">
+                            <input mz-radio-button [label]="'Feminino'" [withGap]="true" id="radio-button-id"
+                                name="genero" type="radio" value="Feminino" [(ngModel)]="curriculum.genero">
+                        </mz-radio-button-container>
+                    </div>
+                </div>
+                <mz-input-container>
+                    <input mz-input [label]="'Endereço'" id="address" name="address" placeholder="Digite seu endereço"
+                        length="150" type="text" [(ngModel)]="curriculum.address">
+                </mz-input-container>
+                <mz-input-container>
+                    <input mz-input [label]="'Telefone'" id="phone" name="phone" placeholder="Digite seu telefone"
+                        type="number" [(ngModel)]="curriculum.phone">
+                </mz-input-container>
+                <mz-input-container>
+                    <input mz-input [label]="'Função desejada'" id="positionWish" name="positionWish"
+                        placeholder="Função desejada" length="150" type="text" [(ngModel)]="curriculum.positionWish">
+                </mz-input-container>
+                <mz-textarea-container>
+                    <textarea mz-textarea [label]="'Experiência Profissional'" id="professionalExp"
+                        name="professionalExp" placeholder="Experiência Profissional" length="250"
+                        [(ngModel)]="curriculum.professionalExp">
+                    </textarea>
+                </mz-textarea-container>
+                <!-- Gambia kkkk-->
+                <h5 class="right-align">
+                    <button mz-button type="button" mz-modal-close id="btn-cancelar" class="red">
+                        Cancelar
+                    </button>
+                    <button mz-button type="submit" mz-modal-close id="btn-salvar" class="green accent-4">
+                        Salvar
+                    </button>
+                </h5>
+            </form>
+        </div>
+    </div>
+</div>
