@@ -1,5 +1,7 @@
 # Obrunofontana
 
+Projeto para aprendizagem do framework Angular, cursando curso de sistemas de informação.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14.
 
 ## Development server
